@@ -20,7 +20,7 @@ export const FormEl = styled(Form)`
     }
 
     div {
-        color: red;
+        color: #df0707;
     }
     
     button {
