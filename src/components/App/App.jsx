@@ -27,14 +27,15 @@ class App extends Component {
   }
 
   addContact = contactData => {
-    const isIncludes = this.state.contacts.some(({name}) => name.toLowerCase() === contactData.name.toLowerCase()); 
+    const isIncludes = this.state.contacts.some(({name, number}) => name.toLowerCase() === contactData.name.toLowerCase() ||
+      number === contactData.number); 
     if(isIncludes) {
-      alert(`${contactData.name} is already in contacts`);
+      alert('A contact with the same name or number is already in contacts');
       return;
     }
 
     const newContact = {
-      id: nanoid(10),
+      id: nanoid(5),
       ...contactData,
     }
   
